@@ -29,6 +29,7 @@ function init() {
     camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
     camera.position.set(0, 10, -10);
     scene.add(camera);
+    console.log(camera.rotation);
 
     controls = new THREE.OrbitControls(camera, element);
     controls.rotateUp(Math.PI / 4);
@@ -96,10 +97,13 @@ function init() {
     scene.add(plane);
     */
 
-    var label = createLabel("Hello !");
-    label.position.set(0, 2, 0);
-    //label.rotateY(45);
-    scene.add(label);
+    var title = createLabel("Welcome in the Hyro's World", 64, 1024, 20);
+    title.position.set(0, 10, 10);
+    scene.add(title);
+
+    var subtitle = createLabel("A WebVR Experiment", 32, 512, 15);
+    subtitle.position.set(0, 8, 10);
+    scene.add(subtitle);
 
 /*
     var canvas1 = document.createElement('canvas');
@@ -181,9 +185,8 @@ function init() {
     plane.position.set(6, 9, -.01);
     scene.add(plane);
 */
-
+/*
     // ground
-	/*
     loader.load('textures/patterns/wood.png',
         function (texture) {
             texture.wrapS = THREE.RepeatWrapping;
@@ -204,8 +207,7 @@ function init() {
             console.log('An error happened');
         }
     );
-    */
-
+*/
     window.addEventListener('resize', resize, false);
     setTimeout(resize, 1);
 }
@@ -299,19 +301,20 @@ function fullscreen() {
     }
 }
 
-function createLabel(text) {
+function createLabel(text, textHeight, ppi, scale) {
     var cvs = document.createElement('canvas');
     var context = cvs.getContext('2d');
 
+    /*
     var metrics = context.measureText(text);
     var textWidth = metrics.width;
-    var textHeight = 128;
+    */
 
-    cvs.width = 1024;
-    cvs.height = 1024;
+    cvs.width = ppi;
+    cvs.height = ppi;
 
     // background
-    // context.fillStyle = "#000000";
+    // context.fillStyle = "#ff0000";
     // context.fillRect(0,0,cvs.width,cvs.height);
 
     // text
@@ -326,7 +329,7 @@ function createLabel(text) {
     var material = new THREE.SpriteMaterial({ map: texture });
     var sprite = new THREE.Sprite(material);
     
-    sprite.scale.set(10, 10, 10);
+    sprite.scale.set(scale, scale, scale);
     return sprite;
 }
 
