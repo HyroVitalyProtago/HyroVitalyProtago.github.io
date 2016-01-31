@@ -29,7 +29,6 @@ function init() {
     camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
     camera.position.set(0, 10, -10);
     scene.add(camera);
-    console.log(camera.rotation);
 
     controls = new THREE.OrbitControls(camera, element);
     controls.rotateUp(Math.PI / 4);
@@ -97,12 +96,12 @@ function init() {
     scene.add(plane);
     */
 
-    var title = createLabel("Welcome in the Hyro's World", 64, 1024, 20);
+    var title = createLabel("Welcome in the Hyro's World", 64, 2048, 75);
     title.position.set(0, 10, 10);
     scene.add(title);
 
-    var subtitle = createLabel("A WebVR Experiment", 32, 512, 15);
-    subtitle.position.set(0, 8, 10);
+    var subtitle = createLabel("A WebVR Experiment", 32, 2048, 75);
+    subtitle.position.set(0, 6, 20);
     scene.add(subtitle);
 
 /*
@@ -326,11 +325,23 @@ function createLabel(text, textHeight, ppi, scale) {
 
     var texture = new THREE.Texture(cvs);
     texture.needsUpdate = true;
+    
+    /*
     var material = new THREE.SpriteMaterial({ map: texture });
     var sprite = new THREE.Sprite(material);
-    
     sprite.scale.set(scale, scale, scale);
     return sprite;
+    */
+
+    var geometry = new THREE.PlaneGeometry(scale, scale, ppi);
+    var material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side: THREE.DoubleSide
+    });
+    var plane = new THREE.Mesh(geometry, material);
+    plane.rotateY(Math.PI);
+    return plane;
 }
 
 window.addEventListener("gamepadconnected", function (e) {
