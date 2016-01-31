@@ -96,7 +96,7 @@ function init() {
     scene.add(plane);
     */
 
-    scene.addObject(createLabel(
+    scene.add(createLabel(
         "HELLO WORLD",
         window.innerWidth*.5,
         window.innerHeight*.5,
