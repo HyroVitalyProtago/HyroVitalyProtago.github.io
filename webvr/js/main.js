@@ -96,15 +96,10 @@ function init() {
     scene.add(plane);
     */
 
-    scene.add(createLabel(
-        "HELLO WORLD",
-        window.innerWidth*.5,
-        window.innerHeight*.5,
-        0,
-        100,
-        "black",
-        "yellow"
-    ));
+    var label = createLabel("Hello !");
+    label.position.set(0, 2, 0);
+    //label.rotateY(45);
+    scene.add(label);
 
 /*
     var canvas1 = document.createElement('canvas');
@@ -127,6 +122,7 @@ function init() {
     scene.add(plane);
 */
 
+/*
     // create the video element
     video = document.createElement( 'video' );
     // video.id = 'video';
@@ -163,7 +159,8 @@ function init() {
     var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
     movieScreen.position.set(0,50,-150);
     scene.add(movieScreen);
-
+*/
+/*
     // wall
     plane = new THREE.Mesh(new THREE.PlaneGeometry(32, 10, 32), new THREE.MeshBasicMaterial({color: 0x000000, side: THREE.DoubleSide}));
     plane.position.set(0, 10, 0);
@@ -183,9 +180,11 @@ function init() {
     plane = new THREE.Mesh(new THREE.PlaneGeometry(5, 8, 32), new THREE.MeshBasicMaterial({color: 0xffffff, side: THREE.DoubleSide}));
     plane.position.set(6, 9, -.01);
     scene.add(plane);
+*/
 
     // ground
-	loader.load('textures/patterns/wood.png',
+	/*
+    loader.load('textures/patterns/wood.png',
         function (texture) {
             texture.wrapS = THREE.RepeatWrapping;
             texture.wrapT = THREE.RepeatWrapping;
@@ -205,6 +204,7 @@ function init() {
             console.log('An error happened');
         }
     );
+    */
 
     window.addEventListener('resize', resize, false);
     setTimeout(resize, 1);
@@ -270,7 +270,7 @@ function update(dt) {
 }
 
 function render(dt) {
-    if ( video.readyState === video.HAVE_ENOUGH_DATA ) 
+    if ( video && video.readyState === video.HAVE_ENOUGH_DATA ) 
     {
         videoImageContext.drawImage( video, 0, 0 );
         if ( videoTexture ) 
@@ -299,39 +299,35 @@ function fullscreen() {
     }
 }
 
-function createLabel(text, x, y, z, size, color, backGroundColor, backgroundMargin) {
-    if(!backgroundMargin)
-        backgroundMargin = 50;
-    var canvas = document.createElement("canvas");
-    var context = canvas.getContext("2d");
-    context.font = size + "pt Arial";
-    var textWidth = context.measureText(text).width;
-    canvas.width = textWidth + backgroundMargin;
-    canvas.height = size + backgroundMargin;
-    context = canvas.getContext("2d");
-    context.font = size + "pt Arial";
-    if(backGroundColor) {
-        context.fillStyle = backGroundColor;
-        context.fillRect(canvas.width / 2 - textWidth / 2 - backgroundMargin / 2, canvas.height / 2 - size / 2 - +backgroundMargin / 2, textWidth + backgroundMargin, size + backgroundMargin);
-    }
+function createLabel(text) {
+    var cvs = document.createElement('canvas');
+    var context = cvs.getContext('2d');
+
+    var metrics = context.measureText(text);
+    var textWidth = metrics.width;
+    var textHeight = 128;
+
+    cvs.width = 1024;
+    cvs.height = 1024;
+
+    // background
+    // context.fillStyle = "#000000";
+    // context.fillRect(0,0,cvs.width,cvs.height);
+
+    // text
+    context.font = "normal " + textHeight + "px Arial";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillStyle = color;
-    context.fillText(text, canvas.width / 2, canvas.height / 2);
-    // context.strokeStyle = "black";
-    // context.strokeRect(0, 0, canvas.width, canvas.height);
-    var texture = new THREE.Texture(canvas);
+    context.fillStyle = "black";
+    context.fillText(text, cvs.width/2, cvs.height/2);
+
+    var texture = new THREE.Texture(cvs);
     texture.needsUpdate = true;
-    var material = new THREE.MeshBasicMaterial({
-        map : texture
-    });
-    var mesh = new THREE.Mesh(new THREE.PlaneGeometry(canvas.width, canvas.height), material);
-    // mesh.overdraw = true;
-    mesh.doubleSided = true;
-    mesh.position.x = x - canvas.width;
-    mesh.position.y = y - canvas.height;
-    mesh.position.z = z;
-    return mesh;
+    var material = new THREE.SpriteMaterial({ map: texture });
+    var sprite = new THREE.Sprite(material);
+    
+    sprite.scale.set(10, 10, 10);
+    return sprite;
 }
 
 window.addEventListener("gamepadconnected", function (e) {
