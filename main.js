@@ -38,8 +38,8 @@ d3.json("sota.json", function(error, graph) {
   
   var text = node.append("text").text(function(d) { return d.id; });
   var textLabels = text
-    .attr("x", function(d) { return d.x; })
-    .attr("y", function(d) { return d.y; })
+    .attr("x", function(d) { return d.cx; })
+    .attr("y", function(d) { return d.cy; })
     .text(function(d) { return d.id; })
     .attr("font-family", "sans-serif")
     .attr("font-size", "20px")
