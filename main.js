@@ -36,7 +36,11 @@ d3.json("sota.json", function(error, graph) {
   
   node.append("title").text(function(d) { return d.id; });
   
-  var text = node.append("text").text(function(d) { return d.id; });
+  var text = svgContainer
+    .selectAll("text")
+    .data(graph.nodes)
+    .enter()
+    .append("text");
   var textLabels = text
     .attr("x", function(d) { return d.x; })
     .attr("y", function(d) { return d.y; })
