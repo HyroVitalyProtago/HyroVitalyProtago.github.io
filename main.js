@@ -9,7 +9,7 @@ var simulation = d3.forceSimulation()
     return d.id;
   }))
   .force("charge", d3.forceManyBody().strength(-100))
-  .force("center", d3.forceCenter(width / 4, height / 2));
+  .force("center", d3.forceCenter(width / 2, height / 2));
 
 d3.json("sota.json", function(error, graph) {
   if (error) throw error;
@@ -19,7 +19,7 @@ d3.json("sota.json", function(error, graph) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-    .attr("stroke-width", function(d) { return 1; /*Math.sqrt(d.value);*/ });
+    .attr("stroke-width", function(d) { return 1; });
   
   var node = svg.append("g")
     .attr("class", "nodes")
@@ -45,7 +45,7 @@ d3.json("sota.json", function(error, graph) {
     .attr("y", function(d) { return d.y; })
     .text(function(d) { return d.id; })
     .attr("font-family", "sans-serif")
-    .attr("font-size", "20px")
+    .attr("font-size", "12px")
     .attr("fill", "black")
     .attr("text-anchor", "middle");
   
