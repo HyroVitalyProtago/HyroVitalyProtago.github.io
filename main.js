@@ -26,7 +26,7 @@ d3.json("sota.json", function(error, graph) {
     .selectAll("circle")
     .data(graph.nodes)
     .enter().append("circle")
-    .attr("r", function(d) { return 10 + d.id.length*5; })
+    .attr("r", function(d) { return 10 + d.id.length*3; })
     .attr("fill", function(d) { return color(d.group); })
     .call(d3.drag()
       .on("start", dragstarted)
