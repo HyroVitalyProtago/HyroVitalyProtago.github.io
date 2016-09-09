@@ -19,9 +19,7 @@ d3.json("sota.json", function(error, graph) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-    .attr("stroke-width", function(d) {
-      return 1; //Math.sqrt(d.value);
-    });
+    .attr("stroke-width", function(d) { return 1; /*Math.sqrt(d.value);*/ });
   
   var node = svg.append("g")
     .attr("class", "nodes")
@@ -29,23 +27,16 @@ d3.json("sota.json", function(error, graph) {
     .data(graph.nodes)
     .enter().append("circle")
     .attr("r", 5)
-    .attr("fill", function(d) {
-      return color(d.group);
-    })
+    .attr("fill", function(d) { return color(d.group); })
     .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
-      .on("end", dragended));
+      .on("end", dragended)
+    );
   
-  node.append("title")
-    .text(function(d) {
-      return d.id;
-    });
+  node.append("title").text(function(d) { return d.id; });
   
-  var text = svg.selectAll(".text")
-    .data(graph.nodes)
-    .enter().append("text");
-    //.call(simulation.drag);
+  var text = node.append("text").text(function(d) { return d.id; });
   var textLabels = text
     .attr("x", function(d) { return d.x; })
     .attr("y", function(d) { return d.y; })
