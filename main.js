@@ -43,9 +43,9 @@ d3.json("sota.json", function(error, graph) {
     });
   
   var text = svg.selectAll(".text")
-    .data(force.nodes())
+    .data(graph.nodes)
     .enter().append("text")
-    .call(force.drag);
+    .call(simulation.drag);
   var textLabels = text
     .attr("x", function(d) { return d.x; })
     .attr("y", function(d) { return d.y; })
