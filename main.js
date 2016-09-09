@@ -42,6 +42,19 @@ d3.json("sota.json", function(error, graph) {
       return d.id;
     });
   
+  var text = svg.selectAll(".text")
+    .data(force.nodes())
+    .enter().append("text")
+    .call(force.drag);
+  var textLabels = text
+    .attr("x", function(d) { return d.x; })
+    .attr("y", function(d) { return d.y; })
+    .text(function(d) { return d.id; })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "black")
+    .attr("text-anchor", "middle");
+  
   simulation
     .nodes(graph.nodes)
     .on("tick", ticked);
