@@ -29,7 +29,7 @@
 			<span id="nbFight" class="navbar-brand ml-3"></span>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
+				<!-- <ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 					</li>
@@ -43,7 +43,7 @@
 				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
+				</form> -->
 			</div>
 
 			<!-- <div>
@@ -76,13 +76,16 @@
 		</div> -->
 
 		<div class="container-fluid p-0">
-			<table class="table table-striped">
+			<div class="progress">
+			  <div class="progress-bar" role="progressbar" style="width: 25%; height: 1px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+			<table class="table table-sm table-striped">
 				<thead>
 					<tr>
 						<th>#</th>
 						<th style="color:red">De gueules</th>
 						<th style="color:blue">D'azur</th>
-						<th>Score</th>
+						<th>/</th>
 					</tr>
 				</thead>
 				<tbody id="fights">
@@ -110,6 +113,27 @@
 					</tbody>
 			</table>
 		</div>
+
+		<footer class="footer p-3 bg-dark" style="position: sticky;bottom:0;">
+			<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+			  <div class="btn-group btn-group-sm" role="group" aria-label="First group">
+			  	<button type="button" class="btn btn-danger">0</button>
+			    <button type="button" class="btn btn-danger">1</button>
+			    <button type="button" class="btn btn-danger">2</button>
+			    <button type="button" class="btn btn-danger">3</button>
+			    <button type="button" class="btn btn-danger">4</button>
+			    <button type="button" class="btn btn-danger">5</button>
+			  </div>
+			  <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
+			  	<button type="button" class="btn btn-primary">0</button>
+			    <button type="button" class="btn btn-primary">1</button>
+			    <button type="button" class="btn btn-primary">2</button>
+			    <button type="button" class="btn btn-primary">3</button>
+			    <button type="button" class="btn btn-primary">4</button>
+			    <button type="button" class="btn btn-primary">5</button>
+			  </div>
+			</div>
+		</footer>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -172,6 +196,17 @@
 			    return fights;
 			};
 
+			function shuffle(a) {
+			    var j, x, i;
+			    for (i = a.length; i; i--) {
+			        j = Math.floor(Math.random() * i);
+			        x = a[i - 1];
+			        a[i - 1] = a[j];
+			        a[j] = x;
+			    }
+			};
+
+			shuffle(fighters);
 			var fights = roundRobin(fighters);
 
 			/*var test = false;
@@ -181,7 +216,8 @@
 			console.log(test);*/
 
 			var fightList = "";
-			for (var i = 0; i < fights.length; ++i) {
+			fightList += '<tr class="table-primary"><th scope="row">1</th><td>'+fights[0].f1+'</td><td>'+fights[0].f2+'</td><td>'+fights[0].score+'</td></tr>'
+			for (var i = 1; i < fights.length; ++i) {
 				fightList += '<tr><th scope="row">'+(i+1)+'</th><td>'+fights[i].f1+'</td><td>'+fights[i].f2+'</td><td>'+fights[i].score+'</td></tr>'
 			}
 			document.getElementById("fights").innerHTML = fightList;
