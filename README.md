@@ -9,4 +9,4 @@ The goal is to write all things said on a day. The app need to works offline wit
 In a second time, the objective is to automate things based on speech as : automaticaly add reminders, etc. and enable search in voice memory.
 Temp dev : https://codepen.io/hyro/pen/VMXEdZ
 
-## todo : offline github issues as todo-list
+### todo : offline github issues as todo-list
