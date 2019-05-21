@@ -1,43 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<html>
+		<head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-    <link href="https://github.com/HyroVitalyProtago" rel="me">
-    <link href="https://twitter.com/HyroVitaly" rel="me">
+      <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+      <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+      <link href="https://github.com/HyroVitalyProtago" rel="me">
+      <link href="https://twitter.com/HyroVitaly" rel="me">
 
-    <link rel="microsub" href="https://aperture.p3k.io/microsub/294">
+      <link rel="microsub" href="https://aperture.p3k.io/microsub/294">
+    
+			<link rel="webmention" href="https://webmention.io/hyrovitalyprotago.github.io/webmention" />
+      <link rel="pingback" href="https://webmention.io/hyrovitalyprotago.github.io/xmlrpc" />
+      
+			<title>{{ page.title }}</title>
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
+		</head>
+		<body>
+			<nav>
+	    		<ul>
+	        		<li><a href="/">Home</a></li>
+		        	<li><a href="/about">About</a></li>
+	        		<li><a href="/cv">CV</a></li>
+	        		<li><a href="/blog">Blog</a></li>
+	    		</ul>
+			</nav>
+			<div class="container">{{ content }}</div>
+			<footer class="h-card">
+				<p>Hi, my name is <span class="p-name">Hyro Vitaly Protago</span> and I am a human on the Internet.</p>
 
-    <link rel="webmention" href="https://webmention.io/hyrovitalyprotago.github.io/webmention" />
-    <link rel="pingback" href="https://webmention.io/hyrovitalyprotago.github.io/xmlrpc" />
-    {% webmentions_head %}
-
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/cv">CV</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-    <div class="container">{{ content }}</div>
-    <footer class="h-card">
-      <p>Hi, my name is <span class="p-name">Hyro Vitaly Protago</span> and I am a human on the Internet.</p>
-      <p>You can find me on other websites below:</p>
-      <ul>
-        <li><a class="u-url" href="https://github.com/HyroVitalyProtago" rel="me">@HyroVitalyProtago</a></li>
-        <li><a class="u-url" href="https://twitter.com/HyroVitaly" rel="me">@HyroVitaly</a></li>
-      </ul>
-    </footer>
-
-    {% webmentions_js %}
-  </body>
-</html>
+        <p>You can find me on other websites below:</p>
+	    		<ul>
+            <li><a class="u-url" href="https://github.com/HyroVitalyProtago" rel="me">@HyroVitalyProtago</a></li>
+            <li><a class="u-url" href="https://twitter.com/HyroVitaly" rel="me">@HyroVitaly</a></li>
+				</ul>
+			</footer>
+		</body>
+	</html>
