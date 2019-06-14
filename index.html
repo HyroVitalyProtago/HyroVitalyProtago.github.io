@@ -1,8 +1,15 @@
 ---
 layout: default
-title: Hyro Vitaly Protago
 ---
-<div class="blurb">
-	<h1>Hi there, I'm Hyro Vitaly Protago!</h1>
-	<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-</div>
+<ul class="posts">
+	{% for post in site.posts %}
+		{%
+			include article.html
+			title=post.title
+			date=post.date
+			url=post.url
+			slug=post.slug
+			content=post.content
+		%}
+	{% endfor %}
+</ul>

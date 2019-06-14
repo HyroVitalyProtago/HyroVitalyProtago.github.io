@@ -1,0 +1,8 @@
+<article class="h-entry">
+  <a class="p-author h-card" href="https://ldavid.fr" style="display:none;">Ludovic David</a>
+  {% if include.title %}
+    <h1 class="p-name">{{ include.title }}</h1>
+  {% endif %}
+  <time class="dt-published" datetime="{{ include.date }}">{{ include.date | date_to_string }}</time>
+  <p class="e-content">{{ include.content }}</p>
+</article>
