@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-  {{ content }}
-</div>
+<article class="h-entry">
+  <a class="p-author h-card" href="https://ldavid.fr" style="display:none;">Ludovic David</a>
+  <h1 class="p-name">{{ page.title }}</h1>
+  <time class="dt-published" datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+  <div class="e-content">{{ content }}</div>
+</article>
