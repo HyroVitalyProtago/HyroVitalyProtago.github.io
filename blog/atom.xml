@@ -1,28 +1,4 @@
 ---
 layout: feed
+lang: [fr, en]
 ---
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-	<title>Hyro Vitaly Protago's Blog</title>
-	<link href="https://ldavid.fr/blog/atom.xml" rel="self"/>
-	<link href="https://ldavid.fr/blog"/>
-	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>https://hyrovitalyprotago.github.io/blog</id>
-	<author>
-		<name>Hyro Vitaly Protago</name>
-	</author>
-
-	{% for post in site.posts %}
-		<entry>
-			{% if post.title %}
-				<title>{{ post.title }}</title>
-			{% endif %}
-			<link href="https://ldavid.fr{{ post.url }}"/>
-			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>https://ldavid.fr{{ post.id }}</id>
-			<content type="html">{{ post.content | xml_escape }}</content>
-		</entry>
-	{% endfor %}
-
-</feed>

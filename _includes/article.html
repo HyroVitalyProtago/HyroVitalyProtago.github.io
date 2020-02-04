@@ -1,8 +1,75 @@
-<article class="h-entry">
+{% capture entry_id %}entry-{% increment entry_id %}{% endcapture %}
+
+<article class="h-entry" id="{{entry_id}}">
   <a class="p-author h-card" href="https://ldavid.fr" style="display:none;">Ludovic David</a>
-  {% if include.title %}
-    <h1 class="p-name">{{ include.title }}</h1>
+  
+  <span class="tags">
+    {% for tag in post.tags %}
+      {% assign tagData = site.data.tags | where: "name", {{tag}} | first %}
+      <a class="p-category" href="/blog/{{ page.lang }}/tags#{{ tag }}">#{{ tag }}<span class="tag-icon">{{ tagData.icon }}</span></a>
+    {% endfor %}
+  </span>
+
+  <a class="u-url" href="{{ post.url | absolute_url }}">🔗</a>
+
+  {% if post.retweeted_status_id %}
+    <a class="u-url" href="https://twitter.com/_/status/{{ post.retweeted_status_id }}" title="twitter link" target="_blank">🐦</a>
+  {% elsif post.tweet_id %}
+    <a class="u-url" href="https://twitter.com/_/status/{{ post.tweet_id }}" title="twitter link" target="_blank">🐦</a>
   {% endif %}
-  <time class="dt-published" datetime="{{ include.date }}">{{ include.date | date_to_string }}</time>
-  <p class="e-content">{{ include.content }}</p>
+
+  <time class="dt-published" datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
+
+  {% if post.title.fr and post.title.en and page.lang contains "fr" and page.lang contains "en" %}
+    <a class="change-language" href="javascript:changeLanguage('{{entry_id}}');">🇬🇧</a>
+  {% endif %}
+
+  {% if post.title.fr and post.title.en and page.lang contains "fr" and page.lang contains "en" %}
+    <h1 class="p-name" data-lang="fr">{{ post.title.fr }}</h1>
+    <h1 class="p-name" data-lang="en">{{ post.title.en }}</h1>
+  {% elsif post.title.fr and page.lang contains "fr" %}
+    <h1 class="p-name">{{ post.title.fr }}</h1>
+  {% elsif post.title.en and page.lang contains "en" %}
+    <h1 class="p-name">{{ post.title.en }}</h1>
+  {% elsif post.title %}
+    <h1 class="p-name">{{ post.title }}</h1>
+  {% endif %}
+
+  <p class="e-content">{{ post.content }}</p>
+
+  {% for photo in post.mf-photo %}
+    {% if photo.value %}
+      <img src="{{photo.value}}" alt="{{photo.alt}}"/>
+    {% else %}
+      <img src="{{photo}}" alt="{{photo}}"/>
+    {% endif %}
+  {% endfor %}
+
+  {% if post.in_reply_to_status_id %}
+    <form action="https://twitter.com/_/status/{{ post.in_reply_to_status_id }}" target="_blank">
+      <button type="submit">
+        <blockquote class="twitter-tweet h-cite u-repost-of repost-content">
+          <a class="u-url" href="https://twitter.com/_/status/{{ post.in_reply_to_status_id }}"></a>
+          <div class="author u-author h-card">
+            <img class="u-photo" src="{{ post.user_avatar }}" />
+            <span class="author-infos">
+              <a class="p-name u-url" href="https://twitter.com/{{ post.user_id }}" target="_blank">{{ post.user_name }}</a>
+              <a class="author_url" href="https://twitter.com/{{ post.user_id }}" target="_blank">@{{ post.user_id }}</a>
+            </span>
+          </div>
+          <p>{{ post.user_text }}</p>
+        </blockquote>
+      </button>
+    </form>
+  {% endif %}
+
+  {% if post.expanded_urls %}
+    {% if post.expanded_urls.first %}
+      <video controls src="{{post.expanded_urls.first[1]}}">
+        Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="https://archive.org/details/BigBuckBunny_124">download it</a> and watch it with your favorite video player!
+      </video>
+    {% else %}
+      <a href="{{ post.expanded_urls }}" target="_blank">{{ post.expanded_urls }}</a>
+    {% endif %}
+  {% endif %}
 </article>

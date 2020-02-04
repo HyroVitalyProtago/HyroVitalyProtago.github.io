@@ -1,0 +1,15 @@
+<ul class="posts">
+  {% for post in site.posts %}
+    {% assign show = false %}
+    {% for lg in page.lang %}
+      {% if post.language contains lg %}
+        {% assign show = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if post.language == nil or show %}
+        {% include article.html %}
+    {% endif %}
+	{% endfor %}
+</ul>

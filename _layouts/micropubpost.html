@@ -1,11 +1,6 @@
 ---
 layout: default
+lang: [fr, en]
 ---
-{%
-  include article.html
-  title=page.title
-  date=page.date
-  url=page.url
-  slug=page.slug
-  content=content
-%}
+{% assign post = page %}
+{% include article.html %}

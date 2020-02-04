@@ -1,15 +1,5 @@
 ---
 layout: default
+lang: [fr, en]
 ---
-<ul class="posts">
-	{% for post in site.posts %}
-		{%
-			include article.html
-			title=post.title
-			date=post.date
-			url=post.url
-			slug=post.slug
-			content=post.content
-		%}
-	{% endfor %}
-</ul>
+{% include posts.html %}

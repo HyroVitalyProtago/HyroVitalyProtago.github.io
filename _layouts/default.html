@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html
+{% if page.lang == "fr" %}
+	lang="fr"
+{% elsif page.lang == "en" %}
+	lang="en"
+{% endif %}
+>
 	{% include head.html %}
 	<body>
 		{% include header.html %}
-		{% include identity.html %}
-		{% include nav.html %}
-		<main>{{ content }}</main>
+		<div id="container">
+			<div id="left-column">
+				{% include identity.html %}
+				{% include nav.html %}
+			</div>
+			<main>{{ content }}</main>
+			{% include aside.html %}
+		</div>
 	</body>
 </html>

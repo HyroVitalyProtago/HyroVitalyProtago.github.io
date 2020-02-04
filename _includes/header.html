@@ -1,5 +1,9 @@
 <header>
-  <a href="/">ldavid.fr</a>
+  {% if page.lang contains 'fr' and page.lang contains 'en' %}
+  <a href="/blog/">ldavid.fr</a>
+  {% else %}
+  <a href="/blog/{{ page.lang }}">ldavid.fr</a>
+  {% endif %}
   <input type="text" placeholder="Rechercher..."/>
   <a href="#">Log in - IndieAuth</a>
 </header>

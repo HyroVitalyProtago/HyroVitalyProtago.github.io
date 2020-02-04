@@ -1,0 +1,46 @@
+<aside>
+  <ul>
+    {% if page.lang != nil %}
+
+      {% if page.url == '/blog' or page.url == '/blog/' %}
+        <li data-lang="fr" data-no-decoration>
+          <a href="/blog/en">In english please 🇬🇧</a>
+        </li>
+        <li data-lang="en" data-no-decoration>
+          <a href="/blog/fr">En français s'il vous plaît 🇫🇷</a>
+        </li>
+      {% elsif page.url == '/blog/tags' or page.url == '/blog/tags/' %}
+        <li data-lang="fr" data-no-decoration>
+          <a href="/blog/en/tags">In english please 🇬🇧</a>
+        </li>
+        <li data-lang="en" data-no-decoration>
+          <a href="/blog/fr/tags">En français s'il vous plaît 🇫🇷</a>
+        </li>
+      {% else %}
+        <!--
+          I just want to keep the hash in the url...
+          Will probably found another way later...
+        -->
+        <script type="text/javascript">function goTo(url) { window.location.assign(url); }</script>
+        <li>
+            <a href="/blog/">Multilangues 🇫🇷🇬🇧</a>
+        </li>
+        <li>
+          <a data-lang="fr" href="javascript:goTo('{{ page.url | replace: 'fr','en' }}'+location.hash);">In english please 🇬🇧</a>
+          <a data-lang="en" href="javascript:goTo('{{ page.url | replace: 'en','fr' }}'+location.hash);">En français s'il vous plaît 🇫🇷</a>
+        </li>
+      {% endif %}
+    {% endif %}
+
+    <li data-theme-hide="dark" onclick="setTheme('dark')">
+      <a data-lang="en" href="//:0">Turn off the light 🌃</a>
+    {% if site.lang == nil %}</li><li data-theme-hide="dark" onclick="setTheme('dark')">{% endif %}
+      <a data-lang="fr" href="//:0">Éteindre la lumière 🌃</a>
+    </li>
+    <li data-theme-hide="light" onclick="setTheme('light')">
+      <a data-lang="en" href="//:0">Turn on the light 🌅</a>
+    {% if site.lang == nil %}</li><li data-theme-hide="light" onclick="setTheme('light')">{% endif %}
+      <a data-lang="fr" href="//:0">Allumer la lumière 🌅</a>
+    </li>
+  </ul>
+</aside>

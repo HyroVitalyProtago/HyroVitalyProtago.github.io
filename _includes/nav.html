@@ -1,8 +1,62 @@
+{% assign fr_count = 0 %}
+{% assign en_count = 0 %}
+{% for post in site.posts %}
+  {% if post.language contains 'fr' %}
+    {% assign fr_count = fr_count | plus: 1 %}
+  {% endif %}
+  {% if post.language contains 'en' %}
+    {% assign en_count = en_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
 <nav>
-  <a href="/">
-    <span class="channel-icon">📬</span>
-    <span class="channel-hash">#</span>
-    <span class="channel-name">All</span>
-    <span class="channel-count">{{ site.posts.size }}</span>
-  </a>
+  <li>
+    {% if page.lang contains 'fr' and page.lang contains 'en' %}
+    <a href="/blog">
+    {% else %}
+    <a href="/blog/{{ page.lang }}">
+    {% endif %}
+      <span class="channel-icon">📬</span>
+      <span class="channel-hash">#</span>
+      <span class="channel-name">all</span>
+      {% if page.lang contains 'fr' and page.lang contains 'en' %}
+        <span class="channel-count">{{ site.posts.size }}</span>
+      {% elsif page.lang == 'fr' %}
+        <span class="channel-count">{{ fr_count }} ({{ en_count }}🇬🇧)</span>
+      {% elsif page.lang == 'en' %}
+        <span class="channel-count">{{ en_count }} ({{ fr_count }}🇫🇷)</span>
+      {% endif %}
+    </a>
+  </li>
+  {% for tag in site.tags %}
+    {% assign tagData = site.data.tags | where: "name", {{tag[0]}} | first %}
+    {% assign tag_fr_count = 0 %}
+    {% assign tag_en_count = 0 %}
+    {% for post in tag[1] %}
+      {% if post.language contains 'fr' %}
+        {% assign tag_fr_count = tag_fr_count | plus: 1 %}
+      {% endif %}
+      {% if post.language contains 'en' %}
+        {% assign tag_en_count = tag_en_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    <li>
+      {% if page.lang contains 'fr' and page.lang contains 'en' %}
+      <a href="/blog/tags#{{ tag[0] }}">
+      {% else %}
+      <a href="/blog/{{ page.lang }}/tags#{{ tag[0] }}">
+      {% endif %}
+        <span class="channel-icon">{{ tagData.icon }}</span>
+        <span class="channel-hash">#</span>
+        <span class="channel-name">{{ tag[0] }}</span>
+        {% if page.lang contains 'fr' and page.lang contains 'en' %}
+          <span class="channel-count">{{ tag[1].size }}</span>
+        {% elsif page.lang == 'fr' %}
+          <span class="channel-count">{{ tag_fr_count }} ({{ tag_en_count }}🇬🇧)</span>
+        {% elsif page.lang == 'en' %}
+          <span class="channel-count">{{ tag_en_count }} ({{ tag_fr_count }}🇫🇷)</span>
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
 </nav>
