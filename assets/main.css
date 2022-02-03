@@ -281,3 +281,10 @@ blockquote p {
 video {
   width: 100%;
 }
+
+.Emoji.Emoji--forText {
+  max-height: 16px;
+}
+.twitter-timeline-link.u-hidden {
+  margin-left: 4px;
+}
