@@ -1,22 +1,1063 @@
 <!DOCTYPE html>
-<html style="background-color: black;">
+<html lang="fr">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <!--<meta http-equiv="refresh" content="0;url=/blog" />-->
-    <meta http-equiv="refresh" content="0; URL=https://www.linkedin.com/in/ludovicdavid/">
-    
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://github.com/HyroVitalyProtago" rel="me">
-    <link href="https://twitter.com/HyroVitaly" rel="me">
-    <link href="mailto:indieweb@ldavid.fr" rel="me">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
 
-    <link rel="microsub" href="https://aperture.p3k.io/microsub/324">
+    <link href="https://github.com/HyroVitalyProtago" rel="me" />
+    <link href="https://twitter.com/HyroVitaly" rel="me" />
+    <link href="mailto:indieweb@ldavid.fr" rel="me" />
 
-    <link rel="webmention" href="https://webmention.io/www.ldavid.fr/webmention" />
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/324" />
+
+    <link
+      rel="webmention"
+      href="https://webmention.io/www.ldavid.fr/webmention"
+    />
     <link rel="pingback" href="https://webmention.io/www.ldavid.fr/xmlrpc" />
 
-    <link rel="micropub" href="https://ldavid-micropub-to-github.glitch.me/micropub/main" />
+    <link
+      rel="micropub"
+      href="https://ldavid-micropub-to-github.glitch.me/micropub/main"
+    />
+
+    <title>Ludovic David</title>
+    <style type="text/css">
+      /* TODO */
+      :root {
+        --color-bg: #69f7be;
+        --color-text-main: #000000;
+        --color-primary: #ffff00;
+        --wrapper-height: 87vh;
+        --image-max-width: 300px;
+        --image-margin: 3rem;
+        --font-family: sans-serif;
+      }
+
+      body {
+        text-align: center;
+        font-family: sans-serif;
+        margin: 0 5%;
+      }
+
+      header {
+        min-height: 64px;
+      }
+      footer {
+        min-height: 64px;
+      }
+
+      main {
+        max-width: 840px;
+        margin: auto;
+      }
+
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      h3 {
+        font-weight: normal;
+      }
+      h4 {
+        font-weight: normal;
+      }
+
+      main h1 {
+        font-size: 3rem;
+      }
+
+      section h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        margin-top: 2rem;
+      }
+
+      article h1 {
+        margin: 0;
+        font-size: 1.3rem;
+      }
+
+      article h2 {
+        margin: 0;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 1.17rem;
+        margin: 0;
+      }
+
+      article {
+        margin-top: 1.5rem;
+        text-align: left;
+      }
+
+      .align-center article {
+        text-align: center;
+      }
+
+      .logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        float: right;
+      }
+      .medias {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .logos img {
+        margin: 0 0.5rem;
+      }
+
+      .colored-gradient-text {
+        background: linear-gradient(90deg, #0010ff 0%, #ff0000 100%);
+        /*background-clip: border-box;*/
+        color: transparent;
+        background-clip: text;
+      }
+
+      .contact-me {
+        background: linear-gradient(125deg, #0010ff 0%, #ff0000 100%) /*yellow*/;
+        min-width: 40%;
+        border: none;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .contact-me:hover {
+        background: linear-gradient(125deg, #0010ff 0%, #ff0000 100%) /*yellow*/;
+        /*background: #1d2d35;*/
+        color: transparent;
+        background-clip: text;
+        outline: 1px solid grey;
+      }
+
+      section {
+        margin-top: 128px;
+      }
+      #section-intro {
+        margin-top: 0;
+        max-width: 420px;
+        margin: auto;
+      }
+
+      .search-job {
+        font-size: x-large;
+        background: linear-gradient(90deg, #0000ff21 0%, #ff000017 100%);
+        border-radius: 0.5rem;
+        box-decoration-break: clone;
+        padding: 0 0.5rem;
+        display: inline;
+        line-height: 1.7rem;
+      }
+
+      .tooltip {
+        text-decoration: underline dotted;
+      }
+
+      .tags {
+        font-style: italic;
+      }
+
+      #section-publications article {
+        text-align: center;
+      }
+
+      #section-projets .description {
+        text-align: justify;
+      }
+
+      .subtitle {
+        font-size: 1.6rem;
+      }
+
+      .ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      article button {
+        border: none;
+        background: none;
+        font-variant-caps: all-small-caps;
+        color: gray;
+        margin-top: 0.3rem;
+        padding: 0;
+      }
+
+      .publisher {
+        font-variant: all-small-caps;
+      }
+
+      article ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      article ul.as-tags li {
+        margin: 0.25em 0.125em;
+        padding: 0.25em 0.75em;
+        background: linear-gradient(90deg, #0000ff21 0%, #ff000017 100%);
+        border-radius: 1em;
+        text-decoration: none;
+        display: inline-block;
+        font-variant: petite-caps;
+      }
+
+      .align-center {
+        text-align: center;
+      }
+
+      #general-skills {
+        font-size: 1.4rem;
+      }
+
+      #general-skills > ul > li {
+        margin: 1rem 0;
+      }
+
+      .lighter {
+        font-weight: lighter;
+        font-size: 1.3rem;
+      }
+
+      a,
+      a:visited {
+        color: inherit;
+        text-decoration-color: black;
+        text-decoration-thickness: 2px;
+        transition: all 0.2s ease;
+        transition-property: text-decoration-color, text-decoration-thickness,
+          text-decoration-width;
+      }
+
+      a:hover {
+        color: inherit;
+        text-decoration-color: blue;
+        text-decoration-thickness: 4px;
+      }
+    </style>
   </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>👋</h1>
+      <h1 class="colored-gradient-text">Ludovic David</h1>
+      <h2>PhD-Ingénieur R&D XR</h2>
+
+      <section id="section-intro">
+        <h2 class="search-job">
+          Je recherche un emploi à partir Septembre 2022.
+        </h2>
+
+        <h3>
+          <strong
+            >Dans le but de contribuer à un projet qui vise à améliorer nos
+            vies</strong
+          >, idéalement dans le domaine de la santé et du handicap.
+        </h3>
+        <h3>
+          <strong>Au sein d'une équipe de recherche et développement</strong>
+          dont le but est de concevoir, prototyper et expérimenter les solutions
+          de demain.
+        </h3>
+        <h3>
+          <strong>Basé sur des technologies innovantes</strong> comme la
+          <span
+            title="eXtended Reality: réalité virtuelle, augmentée et mixte"
+            class="tooltip"
+            >XR</span
+          >, l’<span title="Électroencéphalographie" class="tooltip">EEG</span>
+          ou l’<span title="Électromyographie" class="tooltip">EMG</span>
+          pour explorer, comprendre et déployer leur potentiel.
+        </h3>
+        <h3>
+          <strong>Qui prône les valeurs humaines</strong>, avec un sens de
+          l’éthique éprouvé où la technologie joue son rôle d’outil et où l'on
+          place l'humain avant le profit.
+        </h3>
+        <form action="mailto:hello@ldavid.fr" method="get">
+          <button class="contact-me">
+            <h3><strong>Me Contacter</strong></h3>
+          </button>
+        </form>
+      </section>
+
+      <section id="section-experiences">
+        <h1>Expériences</h1>
+
+        <article class="job">
+          <p class="logos">
+            <img
+              src="assets/logo_ibiscsaclay.png"
+              alt="Logo Laboratoire IBISC, Univ. d'Evry, Univ. Paris-Saclay"
+              height="64px"
+            />
+          </p>
+          <h1 class="title">Chargé de recherche et développement</h1>
+          <p class="company">Laboratoire IBISC</p>
+          <p class="duration">juillet 2020 - juin 2022</p>
+          <p class="location">Évry, France</p>
+        </article>
+
+        <article class="job">
+          <p class="logos">
+            <img
+              src="assets/logo-ih.svg"
+              alt="Logo Interaction Healthcare"
+              height="32px"
+            />
+            <img
+              src="assets/logo_ibiscsaclay.png"
+              alt="Logo Laboratoire IBISC, Univ. d'Evry, Univ. Paris-Saclay"
+              height="64px"
+            />
+          </p>
+          <h1 class="title">Doctorant CIFRE</h1>
+          <p class="company">Interaction Healthcare / Laboratoire IBISC</p>
+          <p class="duration">octobre 2016 - décembre 2019 · 3 ans 3 mois</p>
+          <p class="location">Levallois-Perret / Évry, France</p>
+        </article>
+
+        <article class="job">
+          <p class="logos">
+            <img
+              src="assets/logo_ibiscsaclay.png"
+              alt="Logo Laboratoire IBISC, Univ. d'Evry, Univ. Paris-Saclay"
+              height="64px"
+            />
+          </p>
+          <h1 class="title">Stagiaire - Équipe IRA2</h1>
+          <p class="company">Laboratoire IBISC</p>
+          <p class="duration">mars 2016 - septembre 2016 · 7 mois</p>
+          <p class="location">Évry, France</p>
+        </article>
+
+        <article class="job">
+          <p class="logos">
+            <img
+              src="assets/polytechnique-logo.png"
+              alt="Logo Polytechnique Montréal"
+              height="64px"
+            />
+          </p>
+          <h1 class="title">Stagiaire - Équipe Ptidej</h1>
+          <p class="company">Polytechnique Montréal</p>
+          <p class="duration">juin 2015 - août 2015 · 3 mois</p>
+          <p class="location">Montréal, Canada</p>
+        </article>
+
+        <article class="job">
+          <p class="logos">
+            <img
+              src="assets/logo-909c.jpg"
+              alt="Logo 909c"
+              height="64px"
+            />
+          </p>
+          <h1 class="title">Stagiaire - Développeur</h1>
+          <p class="company">909c</p>
+          <p class="duration">juin 2014 - août 2014 · 3 mois</p>
+          <p class="location">Montreuil, France</p>
+        </article>
+      </section>
+
+      <section id="section-formations">
+        <h1>Formations</h1>
+
+        <article>
+          <p class="logos">
+            <img
+              src="assets/logo-ups.svg"
+              alt="Logo Université Paris-Saclay"
+              height="48px"
+            />
+          </p>
+          <h1 class="degree">Doctorat de philosophie (PhD), Informatique</h1>
+          <p class="school">Université Paris-Saclay</p>
+          <p class="duration">2016 - 2019</p>
+        </article>
+
+        <article>
+          <p class="logos">
+            <img
+              src="assets/logo-ups.svg"
+              alt="Logo Université Paris-Saclay"
+              height="48px"
+            />
+          </p>
+          <h1 class="degree">
+            Master 2, Réalité Virtuelle et Systèmes Intelligents
+          </h1>
+          <p class="school">Université Paris-Saclay</p>
+          <p class="duration">2015 - 2016</p>
+          <!--(Major de Promotion)-->
+        </article>
+
+        <article>
+          <p class="logos">
+            <img
+              src="assets/ensiie-logo.png"
+              alt="Logo Université Paris-Saclay"
+              height="64px"
+            />
+          </p>
+          <h1 class="degree">
+            Ingénieur Informatique, Interactions et collaborations Numériques
+          </h1>
+          <p
+            class="school tooltip"
+            title="École Nationale Supérieure d'Informatique pour l'Industrie et l’Entreprise"
+          >
+            ENSIIE
+          </p>
+          <p class="duration">2013 - 2016</p>
+        </article>
+
+        <article>
+          <p class="logos">
+            <img
+              src="assets/iut-logo.jpg"
+              height="64px"
+            />
+          </p>
+          <h1 class="degree">DUT Informatique</h1>
+          <p class="school">IUT Montreuil - Université Paris VIII</p>
+          <p class="duration">2012 - 2013</p>
+        </article>
+      </section>
+
+      <section id="section-skills" class="align-center">
+        <h1>Compétences</h1>
+
+        <article id="general-skills">
+          <ul>
+            <li>
+              Analyse des besoins, conception et développement de logiciels
+            </li>
+            <li>
+              Gestion de projet centrée-utilisateur en équipe pluridisciplinaire
+            </li>
+            <li>Veille bibliographique, technique et concurrentielle</li>
+            <li>Conception et mise en place d’un protocole expérimental</li>
+            <li>Analyse de données et publications scientifiques</li>
+            <li>Présentations et communications</li>
+            <li>
+              Rédaction de dossier de financement
+              <ul>
+                <li class="lighter">Crédit d’Impôt Recherche (CIR)</li>
+                <li class="lighter">
+                  Fonds Européen de Développement Régional (FEDER)
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h1>Expertises</h1>
+
+          <ul class="as-tags">
+            <li><strong>Interaction Homme-Machine</strong></li>
+            <li><strong>Unity3D</strong></li>
+            <li><strong>C#</strong></li>
+            <li><strong>Lua</strong></li>
+            <li><strong>Javascript</strong></li>
+            <li><strong>WebXR</strong></li>
+            <li><strong>Three.js</strong></li>
+            <li><strong>Aframe</strong></li>
+            <li><strong>ARCore</strong></li>
+            <li><strong>Git</strong></li>
+            <!-- MRTK -->
+            <li>SteamVR</li>
+            <li>OpenCV</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Node.js</li>
+            <li>jQuery</li>
+            <li>Angular</li>
+            <li>React</li>
+            <li>JavaEE</li>
+            <li>PHP5</li>
+            <li>Zend Framework</li>
+            <li>XML (DTD, Schemas, XSLT, XPath)</li>
+            <li>JSON</li>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>IndexedDB</li>
+            <li>UML</li>
+            <li>UX</li>
+          </ul>
+
+          <h2>Technologies</h2>
+          <ul class="as-tags">
+            <li>
+              <strong><strike>Oculus</strike> Meta Quest</strong>
+            </li>
+            <li><strong>Leap Motion</strong></li>
+            <li><strong>Zed Mini</strong></li>
+            <li><strong>Kinect</strong></li>
+            <li><strong>Myo</strong></li>
+            <li><strong>GearVR</strong></li>
+            <li><strong>Daydream View</strong></li>
+            <li><strong>Mirage Solo</strong></li>
+            <li>ZapBox</li>
+            <li><strike>Oculus</strike> Meta Rift</li>
+            <li>HTC Vive</li>
+            <li>Hololens</li>
+            <li>OptiTrack</li>
+            <li>CAVE</li>
+          </ul>
+        </article>
+
+        <article>
+          <h1>Connaissances</h1>
+          <ul class="as-tags">
+            <li>C++</li>
+            <li>WebGL</li>
+            <li>OpenGL</li>
+            <li>GLSL</li>
+            <li>Vuforia</li>
+            <li>StereoKit</li>
+            <li>Tensorflow</li>
+            <li>Keras</li>
+            <li>R</li>
+            <li>Qt</li>
+            <li>Blender</li>
+            <li>AR.js</li>
+            <li>D3.js</li>
+            <li>OpenStack</li>
+            <li>Gradle</li>
+            <li>OCaml</li>
+            <li>SVN</li>
+            <li>Apache</li>
+            <li>Tomcat</li>
+            <li>Glassfish</li>
+            <li>Unreal Engine</li>
+            <li>UI</li>
+            <li>Sécurité</li>
+            <li>Pathologies Neuro-dégénératives</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="section-publications">
+        <h1>Publications</h1>
+
+        <h2>2020</h2>
+        <article>
+          <h1 class="title">
+            <a
+              href="https://hal.archives-ouvertes.fr/hal-03194992v1"
+              target="_blank"
+              >Usability of a user-centered virtual reality system for upper
+              limb motor rehabilitation in chronic stroke patients</a
+            >
+          </h1>
+          <p class="authors">
+            Anne-Gaëlle Grosmaire, Ludovic David, Typhaine Koeppel, Guillaume
+            Bouyer, Samir Otmane, Ophélie Pila, Christophe Duret
+          </p>
+          <p class="publisher">WFNR&SOFMER Congress 2020.</p>
+        </article>
+
+        <h2>2019</h2>
+        <article>
+          <h1 class="title">
+            <a
+              href="https://hal.archives-ouvertes.fr/IBISC/tel-02571389"
+              target="_blank"
+              >Conception et évaluation d’un système de réalité virtuelle pour
+              l’assistance à l’auto-rééducation motrice du membre supérieur
+              post-AVC</a
+            >
+          </h1>
+          <p class="authors">Ludovic David</p>
+          <p class="publisher">
+            Thèse de l’Université Paris-Saclay, Université d’Évry Val-d’Essonne
+          </p>
+        </article>
+
+        <h2>2017</h2>
+        <article>
+          <h1 class="title">
+            <a
+              href="https://hal.archives-ouvertes.fr/hal-01634944"
+              target="_blank"
+              >Towards a low-cost interactive system for motor
+              self-rehabilitation after stroke</a
+            >
+          </h1>
+          <p class="authors">Ludovic David, Guillaume Bouyer, Samir Otmane</p>
+          <p class="publisher">
+            International Journal of Virtual Reality (IJVR), 17 (2):40-45 [<a
+              href="https://doi.org/10.20870/IJVR.2017.17.2.2890"
+              target="_blank"
+              ><strong>DOI</strong></a
+            >]
+          </p>
+        </article>
+
+        <article>
+          <h1 class="title">
+            <a
+              href="https://hal.archives-ouvertes.fr/hal-01753521"
+              target="_blank"
+              >Towards an upper limb self-rehabilitation assistance system after
+              stroke</a
+            >
+          </h1>
+          <p class="authors">Ludovic David, Guillaume Bouyer, Samir Otmane</p>
+          <p class="publisher">
+            19th ACM Virtual Reality International Conference (VRIC), Laval,
+            22-24 mars 2017. [<a
+              href="https://doi.org/10.1145/3110292.3110313"
+              target="_blank"
+              ><strong>DOI</strong></a
+            >]
+          </p>
+        </article>
+      </section>
+
+      <section id="section-projets">
+        <h1>Projets</h1>
+        <p class="subtitle">
+          Passionné d’informatique et de technologies innovantes, je mène des
+          développements personnels dans divers domaines pour tester de
+          nouvelles méthodes d’interactions, contourner les limitations des
+          outils actuels, tester diverses architectures, langages et méthodes de
+          programmation ainsi que pour me détendre l’esprit. Je participe aussi
+          à plusieurs communautés liées à l'XR, l'IHM et le Web qui vise à
+          inventer, prototyper et diffuser de nouvelles solutions
+          <em>open-source / libres / Do-It-Yourself (DIY) / P2P / Indie</em>
+          comme alternatives éthiques.
+        </p>
+
+        <h2>2022</h2>
+        <article>
+          <h1>Lambda : Réseau Social P2P Local-First</h1>
+          <p class="tags">
+            #web #p2p #crypto-security #local-first #social-network #webrtc
+          </p>
+          <p class="description ellipsis">
+            Partisans de l’IndieWeb, j’ai voulu développé un réseau social
+            local-first p2p adapté du protocole Secure Scuttlebutt. L’idée
+            principale est que les données des utilisateurs sont signées et
+            dupliquées entre chaque pair dans un cercle restreint. Les
+            communications sont sécurisées et directes. Il faut donc que les
+            utilisateurs soient connectés au même moment pour se synchroniser,
+            mais ça ne les empêche pas de consulter plus tard ou de publier
+            hors-ligne. Dans l'idéal, l'objectif est de poursuivre le même
+            principe avec WebXR.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <h2>2021</h2>
+        <article>
+          <p class="medias">
+            <video height="300vw" controls>
+              <source
+                src="assets/myo-2.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </p>
+          <h1>[En cours] NeuroXR : Suivi de doigts par EMG</h1>
+          <p class="tags">
+            #unity #myo #python #ihm #machine-learning #tensorflow #leap-motion
+            #quest
+          </p>
+          <p class="description ellipsis">
+            Ce projet de suivi de doigt par EMG grâce au Myo me tient
+            particulièrement à coeur et est loin d’être terminé. En 2016/2017,
+            j’avais vu les premiers travaux de CTRL.Labs et tenté de les
+            reproduire dans Unity avec ML-Agents et le Myo du laboratoire car je
+            pensais déjà à la pertinence de ces travaux dans le cadre de la
+            rééducation post-AVC et du contrôle de prothèse de bras robotisées.
+            Cependant, si je comprenais les bases de l’apprentissage machine
+            (ML), j’étais loin de savoir comment faire. C’est en 2021 que j’ai
+            recommencé à travailler sur cette idée en contribuant de manière
+            open-source à pyomyo et NeuroLeap, travaux initiés par @PerlinWarp.
+            Nous sommes convaincu que c’est le futur de l’Interaction
+            Homme-Machine (IHM) et l’objectif est de permettre à la communauté
+            d’être indépendant de Facebook Meta, qui a racheté CTRL.Labs,
+            possède les brevets de Myo (RIP), et qui devrait sortir d’ici peu un
+            bracelet EMG pour interagir en XR. Malheureusement, l’entreprise ne
+            fait pas cela par compassion. Les signaux EMG sont une des
+            meilleures manière d’identifier un individu (fingerprinting). Le
+            modèle économique étant basé sur la publicité ciblée, on peut
+            rapidement imaginer les dérives du géant américain. Une partie du
+            groupe NeuroXR tente donc de développer du matériel DIY
+            (Do-It-Yourself) car Myo n’est plus commercialisé et les
+            alternatives restent peu nombreuses, tandis que l’autre partie
+            s’occupe de développer du logiciel pour permettre le passage entre
+            signal électrique et activité musculaire des doigts. Je ne suis pas
+            spécialiste de ML, mais j’ai commencé à m’y mettre avec Python et
+            Tensorflow. De plus, malgré ses imperfections, le Leap Motion permet
+            de constituer rapidement une base de données pour le ML.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <h2>2020</h2>
+        <article>
+          <p class="medias">
+            <img
+              src="assets/leap-quest.png"
+              height="300vw"
+            />
+            <video height="300vw" controls>
+              <source
+                src="assets/leap-quest-passthrough.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <video height="300vw" controls>
+              <source
+                src="assets/zed.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </p>
+          <h1>
+            Leap Motion et Zed Mini comme caméra passthrough pour Oculus Meta
+            Quest
+          </h1>
+          <p class="tags">
+            #unity #leap-motion #quest #ar #passthrough #android
+          </p>
+          <p class="description ellipsis">
+            Pour contourner les limitations de l’API passthrough qui n’était
+            alors pas encore disponible en 2019, j’ai commencé par connecter un
+            Leap Motion directement au Quest en tant que caméra UVC. Bien que
+            difficilement accessible dans Unity grâce à un plugin qu’il a fallu
+            étendre pour supporter le format un peu spécial YUYV interlacé mis à
+            disposition par Leap Motion, il m’a ensuite suffit de distordre et
+            d’afficher l’image de chaque caméra à chaque oeil pour permettre le
+            passthrough. Cependant, plusieurs aspects restent insatisfaisants,
+            notamment à cause du problème d’alignement. Pour simplifier, la
+            position du Leap Motion et l’écart entre les caméras sont différents
+            de la position des yeux et l’écart des yeux, ce qui génère une
+            adaptation légèrement gênante de notre vision. J’ai par la suite
+            fait l’acquisition d’une Zed Mini (caméra stéréoscopique couleur) et
+            ai retenter l’expérimentation. Cependant, je n’ai pas entièrement
+            réussi à faire du passthrough avec car il y a un problème d’images
+            par secondes (framerate). Toutes les ~5 secondes, l’image récupérée
+            de la caméra appliquée à une texture dans Unity freeze. Cela ne
+            semble pas être en rapport à un problème de mémoire ni de
+            ramasse-miettes (garbage collection), mais pourrait être lié à une
+            librairie interne au plugin qui n’est pas mise à jour pour l’USB3.0.
+            N’étant pas entièrement à l’aise avec le développement Android de
+            plugin AAR et l’API passthrough d’Oculus étant sortie, j’ai mis le
+            projet en pause. Maintenant que le casque Lynx a été annoncé,
+            utilise la Zed Mini avec un PC, SteamVR, Unity et OpenCV pour
+            expérimenter en réalité augmentée.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <article>
+          <p class="medias">
+            <img
+              src="assets/tsks.png"
+              height="300vw"
+            />
+          </p>
+          <h1>
+            <a href="tsks.glitch.me" target="_blank"
+              >Tsks : Gestion de tâches</a
+            >
+          </h1>
+          <p class="tags">#web #js #remote-storage</p>
+          <p class="description ellipsis">
+            Depuis toujours, je recherche des applications qui permettent
+            d’améliorer la productivité, la prise de notes et plus globalement
+            la gestion de projet. Une des applications dont j’ai trouvé l’UI/UX
+            très plaisante est Google Keep. Cependant, j’aime l’idée de
+            commencer à s’émanciper des GAFAM, et notamment Google et ses
+            produits. Je voulais faire une application web dans laquelle les
+            données pouvaient être stockée à l’endroit ou l’utilisateur le
+            souhaite, et dans mon cadre, à domicile. J’ai donc opté pour
+            RemoteStorage, une librairie qui permet de synchroniser ses données
+            avec un serveur que peut choisir l’utilisateur à travers un
+            protocole spécifique.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <article>
+          <h1>
+            <a
+              href="https://github.com/HyroVitalyProtago/LeapMotionRemoteUnity"
+              target="_blank"
+              >Leap Motion Remote Unity</a
+            >
+          </h1>
+          <p class="tags">
+            #unity #leap-motion #network #websockets #quaternions
+          </p>
+          <p class="description ellipsis">
+            Afin d'aider un utilisateur du Leap Motion (LM) qui avaient exposé
+            ses problèmes sur le forum de LM, j'ai apporté quelques
+            modifications au Leap Motion Unity Core Plugin pour faciliter son
+            utilisation à distance. J'ai tout simplement ajouter une libraire C#
+            de Websocket pour se connecter au serveur déjà déployé par LM qui
+            sont normalement utilisés par Leap.js. Ensuite, il a fallu
+            reconvertir les données json pour qu'elles correspondent aux
+            structures C#, et notamment reconstituer les quaternions à partir
+            des bases.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <h2>2019</h2>
+        <article>
+          <p class="medias">
+            <img
+              src="assets/leap-quest-proto.png"
+              height="300vw"
+            />
+            <video height="300vw" controls>
+              <source
+                src="assets/leap-quest.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </p>
+          <h1>Leap Motion (LM) sur Oculus Meta Quest avec PC distant</h1>
+          <p class="tags">#unity #leap-motion #quest #hand-tracking</p>
+          <p class="description ellipsis">
+            Avant que le suivi de main soit disponible sur Quest, j’avais
+            connecté un Leap Motion directement au casque autonome. Comme le LM
+            ne dispose pas de SDK compatible Android, il a fallu utiliser
+            l’application VirtualHere qui permet d’utiliser des appareils USB
+            sur le réseau comme si ils étaient connectés en local. Installé sur
+            le casque (pour rappel sous Android) et un PC, connecté par Wifi
+            (5GHz pour une latence minimale), le LM est fonctionnel sur le PC
+            comme si était branché en local. Ensuite, il suffit de récupérer les
+            données du LM via le serveur websocket déjà déployé sur le PC dans
+            une expérience WebXR sur Quest en l’occurence basé sur Aframe.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <!-- TODO Unijam -->
+        <!-- TODO AirCodea -->
+        <!-- TODO expresslua -->
+
+        <h2>2018</h2>
+        <article>
+          <p class="medias">
+            <img
+              src="assets/webvrse.png"
+              height="300vw"
+            />
+          </p>
+          <h1>
+            Webvrse : WebVR Experiment pour le Medieval Fantasy Experience
+            Challenge de Mozilla
+          </h1>
+          <p class="tags">#webvr #webrtc #aframe #social</p>
+          <p class="description ellipsis">
+            Avant la sortie de Mozilla Hubs, les briques logicielles étaient
+            déjà réunis et j’avais mis en place sur glitch.com un site qui
+            permettait de déployer un environnement virtuel persistant et social
+            (avatar et voix via WebRTC) codé avec Aframe. La spécificité était
+            qu’un responsable (master) pouvait via son PC modifier la scène en
+            temps réel et ajouter des objets juste par drag&drop d’objets
+            disponibles sur poly.google.com et sketchfab.com dans l’Aframe
+            inspector. Il était aussi possible de visiter les environnements
+            sans l’aspect social.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <article>
+          <h1>
+            Utilisation de l’API ARCore pour le suivi 6dof en VR sur smartphone
+          </h1>
+          <p class="tags">#android #arcore #6dof #vr</p>
+          <p class="description ellipsis">
+            En 2018, les seuls casques que je possédais étaient un Samsung Gear
+            VR et un (Google) Daydream View que j’utilisais avec mon Samsung S8
+            (premier téléphone qui était compatible VR/AR, qui est encore celui
+            que j’utilise en 2022 !). Mais ayant eu l’occasion de tester une
+            CAVE et un peu plus tard l’HTC Vive, je souhaitais avoir accès à de
+            la 6dof. Grâce à l’API ARCore, c’est devenu possible. Cependant, les
+            ressources demandées au smartphone (double rendu VR + SLAM
+            propriétaire avec ARCore) sont assez élevées, ce qui n’est pas
+            idéal.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <h2>2017</h2>
+        <article>
+          <h1>Leap Motion Multijoueurs</h1>
+          <p class="tags">#unity #leap-motion #network #unet #hlapi</p>
+          <p class="description ellipsis">
+            Premiers tests d'interactions à distance avec des Leap Motion et
+            découverte de la <em>High Level API</em> réseau de Unity maintenant
+            tombée en désuétude pour que sorte en 2021-2022
+            <em>Netcode for GameObjects</em> (toujours en développement au
+            moment ou j'écris ces lignes...).
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <h2>2016</h2>
+        <article>
+          <p class="medias">
+            <img
+              src="assets/controller-emulator.png"
+              height="300vw"
+            />
+          </p>
+          <h1>
+            <a
+              href="https://github.com/HyroVitalyProtago/ControllerEmulator"
+              target="_blank"
+              >Controller Emulator pour iOS</a
+            >
+          </h1>
+          <p class="tags">#vr #ios #controller #3dof #daydream</p>
+          <p class="description ellipsis">
+            Avant d’avoir un Daydream View de Google, je voulais commencer à
+            développer des application de réalité virtuelle et n’ayant pas de
+            deuxième téléphone sous Android pour utiliser le Controller Emulator
+            proposé par Google, je l’ai redéveloppé sous Unity pour pouvoir
+            l’utiliser sur un vieux Iphone 4. La difficulté majeure était de
+            faire de la rétro-ingénierie de la communication réseau, mais avec
+            Wireshark et un peu de patience plus un carnet de note, rien n’est
+            impossible. De plus, l’Iphone 4 n’étant pas très puissant, il a
+            fallu faire un peu d’optimisation mémoire pour éviter l’allocation
+            du ramasse-miettes (garbage collector).
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <article>
+          <p class="medias">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/TOw2-rsiVE0"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </p>
+          <h1>VRIKEA - Projet de fin d’école d’ingénieur</h1>
+          <p class="tags">#vr #oculus-dk2 #phone-controller #cardboard</p>
+          <p class="description ellipsis">
+            Nous avons développé une application d'aménagement de cuisine en
+            réalité virtuelle réalisée dans le cadre de la filière Jeux Vidéos,
+            Interactions et Collaborations Numériques (JIN) en partenariat avec
+            Telecom SudParis et l’ENSIIE. A l’époque, nous développons sur Unity
+            pour l’Oculus DK2 et Cardboard. Pour palier au problème du contrôle
+            de l’application, nous utilisons un smartphone comme manette
+            (télécommande) 3dof tactile. Ce n’est que quelques mois plus tard
+            que nous verrons apparaître les manettes 3dof pour les casques
+            Samsung Gear VR et Daydream View de Google (et d’autres par la suite
+            comme le Mirage Solo de Lenovo/Google). Nous avons eu l'opportunité
+            de faire deux présentations du projet directement à IKEA.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <h2>2015</h2>
+        <article>
+          <h1>UNIJAM</h1>
+          <p class="tags">#game-jam #ensiie #tsp</p>
+          <p class="description ellipsis">
+            Lors de mes études, j'ai participé à une game jam de 48h dont le
+            thème était "I have a dream!" dans laquelle nous avons remporté 2
+            prix : le stick adhésif (meilleur gameplay) et le coup de coeur du
+            public.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <article>
+          <h1>
+            LAVAL VIRTUAL - Concours « Virtual Fantasy » catégorie « Temps
+            limité »
+          </h1>
+          <p class="tags">#vr #oculus-dk2 #unity #game-jam</p>
+          <p class="description ellipsis">
+            Avec l'association de réalité de virtuelle de l'ENSIIE nommée
+            RealitIIE, nous participons pour la deuxième année consécutive au
+            concours de RV de Laval Virtual. Cette année, l'objet mystère de mon
+            équipe est un jardin zen.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <!-- TODO Asteroyds: refonte du projet de 2012 -->
+        <!-- TODO Required -->
+
+        <h2>2014</h2>
+        <article>
+          <h1>
+            LAVAL VIRTUAL - Concours « Virtual Fantasy » catégorie « Temps
+            limité »
+          </h1>
+          <p class="tags">#vr #oculus-dk1 #kinect #unity #game-jam</p>
+          <p class="description ellipsis">
+            Première compétition à base de réalité virtuelle à laquelle j'ai eu
+            l'occasion de participer. Suite à mon DUT, j'avais de solides bases
+            en programmation qui m'ont rapidement permis de prendre en main
+            unity et de contribuer à cette compétition lors de ma première année
+            d'école d'ingénieur. Notre objet mystère : un rongeur volant !
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+
+        <!-- TODO Codea written in Codea -->
+        <!-- TODO SyncCodea -->
+
+        <!-- <h2>2013</h2> -->
+        <!-- TODO Github/Dropbox API -->
+      </section>
+      <footer></footer>
+    </main>
+
+    <script type="text/javascript">
+      function toggleEllipsis(btn) {
+        btn.previousElementSibling.classList.toggle("ellipsis");
+        btn.textContent =
+          btn.textContent === "En savoir plus"
+            ? "En savoir moins"
+            : "En savoir plus";
+      }
+    </script>
+  </body>
 </html>
