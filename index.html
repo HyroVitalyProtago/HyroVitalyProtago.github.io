@@ -557,6 +557,7 @@
             <li>Tomcat</li>
             <li>Glassfish</li>
             <li>Unreal Engine</li>
+            <li>Figma</li>
             <li>UI</li>
             <li>Sécurité</li>
             <li>Pathologies Neuro-dégénératives</li>
@@ -663,15 +664,15 @@
             #web #p2p #crypto-security #local-first #social-network #webrtc
           </p>
           <p class="description ellipsis">
-            Partisans de l’IndieWeb, j’ai voulu développé un réseau social
-            local-first p2p adapté du protocole Secure Scuttlebutt. L’idée
+            Partisans de l’<a href="https://indieweb.org/" target="_blank">IndieWeb</a>, j’ai voulu développé un réseau social
+            <a href="https://www.inkandswitch.com/local-first.html" target="_blank">local-first</a> <a href="https://en.wikipedia.org/wiki/Peer-to-peer" target="_blank">p2p</a> adapté du protocole <a href="https://scuttlebutt.nz/" target="_blank">Secure Scuttlebutt</a>. L’idée
             principale est que les données des utilisateurs sont signées et
             dupliquées entre chaque pair dans un cercle restreint. Les
             communications sont sécurisées et directes. Il faut donc que les
             utilisateurs soient connectés au même moment pour se synchroniser,
             mais ça ne les empêche pas de consulter plus tard ou de publier
             hors-ligne. Dans l'idéal, l'objectif est de poursuivre le même
-            principe avec WebXR.
+            principe avec <a href="https://immersive-web.github.io/webxr/" target="_blank">WebXR</a> : un <a href="https://github.com/RangerMauve/local-first-cyberspace#local-first-cyberspace" target="_blank">local-first cyberspace</a>.
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
@@ -693,30 +694,30 @@
             #quest
           </p>
           <p class="description ellipsis">
-            Ce projet de suivi de doigt par EMG grâce au Myo me tient
+            Ce projet de suivi de doigts par EMG grâce au Myo me tient
             particulièrement à coeur et est loin d’être terminé. En 2016/2017,
             j’avais vu les premiers travaux de CTRL.Labs et tenté de les
             reproduire dans Unity avec ML-Agents et le Myo du laboratoire car je
             pensais déjà à la pertinence de ces travaux dans le cadre de la
-            rééducation post-AVC et du contrôle de prothèse de bras robotisées.
+            rééducation post-AVC et du contrôle de prothèse de bras robotisée.
             Cependant, si je comprenais les bases de l’apprentissage machine
             (ML), j’étais loin de savoir comment faire. C’est en 2021 que j’ai
             recommencé à travailler sur cette idée en contribuant de manière
             open-source à pyomyo et NeuroLeap, travaux initiés par @PerlinWarp.
             Nous sommes convaincu que c’est le futur de l’Interaction
             Homme-Machine (IHM) et l’objectif est de permettre à la communauté
-            d’être indépendant de Facebook Meta, qui a racheté CTRL.Labs,
+            d’être indépendante de Facebook Meta, qui a racheté CTRL.Labs,
             possède les brevets de Myo (RIP), et qui devrait sortir d’ici peu un
             bracelet EMG pour interagir en XR. Malheureusement, l’entreprise ne
             fait pas cela par compassion. Les signaux EMG sont une des
-            meilleures manière d’identifier un individu (fingerprinting). Le
+            meilleures manières d’identifier un individu (fingerprinting). Le
             modèle économique étant basé sur la publicité ciblée, on peut
             rapidement imaginer les dérives du géant américain. Une partie du
             groupe NeuroXR tente donc de développer du matériel DIY
             (Do-It-Yourself) car Myo n’est plus commercialisé et les
             alternatives restent peu nombreuses, tandis que l’autre partie
-            s’occupe de développer du logiciel pour permettre le passage entre
-            signal électrique et activité musculaire des doigts. Je ne suis pas
+            s’occupe de développer du logiciel pour permettre le décodage du
+            signal électrique de l'activité musculaire des doigts. Je ne suis pas
             spécialiste de ML, mais j’ai commencé à m’y mettre avec Python et
             Tensorflow. De plus, malgré ses imperfections, le Leap Motion permet
             de constituer rapidement une base de données pour le ML.
@@ -777,7 +778,7 @@
             N’étant pas entièrement à l’aise avec le développement Android de
             plugin AAR et l’API passthrough d’Oculus étant sortie, j’ai mis le
             projet en pause. Maintenant que le casque Lynx a été annoncé,
-            utilise la Zed Mini avec un PC, SteamVR, Unity et OpenCV pour
+            j'utilise la Zed Mini avec un PC, SteamVR, Unity et OpenCV pour
             expérimenter en réalité augmentée.
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
@@ -862,16 +863,51 @@
             sur le réseau comme si ils étaient connectés en local. Installé sur
             le casque (pour rappel sous Android) et un PC, connecté par Wifi
             (5GHz pour une latence minimale), le LM est fonctionnel sur le PC
-            comme si était branché en local. Ensuite, il suffit de récupérer les
+            comme si il était branché en local. Ensuite, il suffit de récupérer les
             données du LM via le serveur websocket déjà déployé sur le PC dans
             une expérience WebXR sur Quest en l’occurence basé sur Aframe.
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
 
-        <!-- TODO Unijam -->
-        <!-- TODO AirCodea -->
-        <!-- TODO expresslua -->
+        <article>
+          <h1>UNIJAM</h1>
+          <p class="tags">#game-jam #ensiie #tsp</p>
+          <p class="description ellipsis">
+            Lors de mes études, j'ai participé à une game jam de 48h dont le
+            thème était "I have a dream!" dans laquelle nous avons remporté 2
+            prix : le stick adhésif (meilleur gameplay) et le coup de coeur du
+            public.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+        
+        <article>
+          <h1>
+            <a href="https://github.com/HyroVitalyProtago/AirCodea" target="_blank">AirCodea</a> : AirCode de Codea dans Codea
+          </h1>
+          <p class="tags">#codea #lua #aircode #expresslua</p>
+          <p class="description ellipsis">
+            Codea dispose d'une fonctionnalités nommée AirCode qui permet d'éditer son code dans un navigateur web et de hot-reload 
+            le projet à chaque modifications. Comme à mon habitude, dès qu'un système ne me satisfait pas entièrement, je le reconstruit.
+            J'ai donc utilisé ma librairie de serveur web en lua, expressjs, ainsi que le monaco editor. J'implémente cette fois-ci 
+            un véritable hot-reload qui permet de conserver l'état du projet malgré le rechargement d'une partie du code. Je me heurte cependant 
+            à quelques problèmes, notamment le fait de devoir redévelopper des fonctions Codea qui sont par défaut liée au projet dans lequel elles 
+            sont utilisées. Je n'ai jamais terminé de reconstruire l'entièreté de la sandbox viable.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+        <article>
+          <h1>
+            <a href="https://github.com/HyroVitalyProtago/expresslua" target="_blank">ExpressLua</a> : Comme Express de Node.js mais en Lua
+          </h1>
+          <p class="tags">#codea #lua #express</p>
+          <p class="description ellipsis">
+            Pour permettre de faciliter la communication entre mes projets dans Codea et d'autres projets web, natifs et XR.
+            Je redéveloppe un serveur web simple en Lua basé sur les coroutines. Celui-ci sera d'ailleurs utilisé dans AirCodea.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
 
         <h2>2018</h2>
         <article>
@@ -995,18 +1031,6 @@
 
         <h2>2015</h2>
         <article>
-          <h1>UNIJAM</h1>
-          <p class="tags">#game-jam #ensiie #tsp</p>
-          <p class="description ellipsis">
-            Lors de mes études, j'ai participé à une game jam de 48h dont le
-            thème était "I have a dream!" dans laquelle nous avons remporté 2
-            prix : le stick adhésif (meilleur gameplay) et le coup de coeur du
-            public.
-          </p>
-          <button onclick="toggleEllipsis(this)">En savoir plus</button>
-        </article>
-
-        <article>
           <h1>
             LAVAL VIRTUAL - Concours « Virtual Fantasy » catégorie « Temps
             limité »
@@ -1016,13 +1040,28 @@
             Avec l'association de réalité de virtuelle de l'ENSIIE nommée
             RealitIIE, nous participons pour la deuxième année consécutive au
             concours de RV de Laval Virtual. Cette année, l'objet mystère de mon
-            équipe est un jardin zen.
+            équipe est un jardin zen. Contrairement à 2014, je suis plus expérimenté 
+            et prends le rôle de lead dev. Cependant, le matériel (oculus dk2), nos connaissances UX 
+            et en optimisation pour la VR sont encore limités et notre expérience suscite un peu de cybermalaise...
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
 
         <!-- TODO Asteroyds: refonte du projet de 2012 -->
-        <!-- TODO Required -->
+        <article>
+          <h1>
+            <a href="https://gist.github.com/HyroVitalyProtago/7802bd00e7d56d480379" target="_blank">Required</a> : Gestion des dépendances dans Codea
+          </h1>
+          <p class="tags">#codea #dependencies #lua #gist</p>
+          <p class="description ellipsis">
+            Dans Codea, il est possible de préciser que d'autres projets installés en local doivent être chargé avant 
+            le projet principal comme dépendance. Afin de faciliter les collaborations et la gestion de version, j'avais 
+            développé Required qui permet à la fois de publier ses projets sur Gist (de Github) mais aussi de charger des 
+            projets sur Gist comme dépendances, comme dans le web ou il suffit de mettre dans la section head un lien vers 
+            une librairie javascript.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
 
         <h2>2014</h2>
         <article>
@@ -1041,11 +1080,52 @@
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
 
-        <!-- TODO Codea written in Codea -->
-        <!-- TODO SyncCodea -->
-
-        <!-- <h2>2013</h2> -->
-        <!-- TODO Github/Dropbox API -->
+        <article>
+          <p class="medias">
+            <iframe width="618" height="470" src="https://www.youtube.com/embed/LtHXx1XQvY4" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          </p>
+          <h1>
+            Codeaception : Codea dans Codea
+          </h1>
+          <p class="tags">#codea #meta #ide #lua</p>
+          <p class="description ellipsis">
+            Codea est un IDE sur iPad avec des fonctionnalités semblables à Processing.
+            Comme celui-ci n'était pas extensible, j'avais commencé à le recréer, mais dans celui-ci.
+            J'ai donc commencé par coder un visualiseur de code, dans lequel le code est parsé pour 
+            obtenir de la coloration syntaxique. De plus, grâce à la programmation meta, je pouvais lancer 
+            des projets dans le codea dans codea. J'ai malheureusement arrêté le projet avant de passer à l'édition de texte.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+        <article>
+          <h1>
+            <a href="https://david.iiens.net/Codea/SyncCodeaInstaller.lua" target="_blank">SyncCodea</a> : Synchronisation de projets Codea via Dropbox
+          </h1>
+          <p class="tags">#codea #lua #dropbox #api #rest</p>
+          <p class="description ellipsis">
+            Ce projet permet de synchroniser des projets entre Codea et Dropbox. En particulier, 
+            lorsque le projet est modifié, par exemple sur un pc avec le dossier synchroniser dropbox, 
+            SyncCodea le détecte, télécharge les modifications et relance le projet : un espèce de hot-reload.
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
+        
+        <h2>2013</h2>
+        <article>
+          <h1>
+            API <a href="https://gist.github.com/HyroVitalyProtago/6296553" target="_blank">Github</a> et <a href="https://gist.github.com/HyroVitalyProtago/8341278" target="_blank">Dropbox</a>
+          </h1>
+          <p class="tags">#codea #lua #github #gist #dropbox #api #rest</p>
+          <p class="description ellipsis">
+            A cette époque, je développe sur iPad via Codea (une IDE avec des fonctionnalités semblables à Processing).
+            Codea intègre un outil de synchronisation des projets via Dropbox, mais à l'époque, celui-ci n'est pas encore stable.
+            Je commence alors à le développer (il deviendra SyncCodea en 2014), et pour ce faire, il me faut comprendre et accéder à l'api dropbox en Lua.
+            Pendant les développements, j'en profite aussi pour m'attaquer à l'api de Github pour faciliter la gestion de version.
+            L'année d'après, je mets à jour <a href="https://github.com/HyroVitalyProtago/GithubAPI" target="_blank">GithubAPI</a> 
+            (qui dans mes souvenirs avait changé de méthode d'authentification avec OAuth2.0).
+          </p>
+          <button onclick="toggleEllipsis(this)">En savoir plus</button>
+        </article>
       </section>
       <footer></footer>
     </main>
