@@ -664,7 +664,7 @@
             #web #p2p #crypto-security #local-first #social-network #webrtc
           </p>
           <p class="description ellipsis">
-            Partisans de l’<a href="https://indieweb.org/" target="_blank">IndieWeb</a>, j’ai voulu développé un réseau social
+            Partisans de l’<a href="https://indieweb.org/" target="_blank">IndieWeb</a>, j’ai voulu développer un réseau social
             <a href="https://www.inkandswitch.com/local-first.html" target="_blank">local-first</a> <a href="https://en.wikipedia.org/wiki/Peer-to-peer" target="_blank">p2p</a> adapté du protocole <a href="https://scuttlebutt.nz/" target="_blank">Secure Scuttlebutt</a>. L’idée
             principale est que les données des utilisateurs sont signées et
             dupliquées entre chaque pair dans un cercle restreint. Les
@@ -695,32 +695,33 @@
           </p>
           <p class="description ellipsis">
             Ce projet de suivi de doigts par EMG grâce au Myo me tient
-            particulièrement à coeur et est loin d’être terminé. En 2016/2017,
-            j’avais vu les premiers travaux de CTRL.Labs et tenté de les
-            reproduire dans Unity avec ML-Agents et le Myo du laboratoire car je
+            particulièrement à coeur et est loin d’être terminé. En début de thèse,
+            j’avais vu les premiers travaux de <a href="https://www.theverge.com/2018/6/6/17433516/ctrl-labs-brain-computer-interface-armband-hands-on-preview" target="_blank">CTRL.Labs</a> et tenté de les
+            reproduire dans Unity avec <a href="https://github.com/Unity-Technologies/ml-agents" target="_blank">ML-Agents</a> et le <a href="https://www.youtube.com/watch?v=A8lGstYAY14" target="_blank">Myo</a> du laboratoire car je
             pensais déjà à la pertinence de ces travaux dans le cadre de la
             rééducation post-AVC et du contrôle de prothèse de bras robotisée.
             Cependant, si je comprenais les bases de l’apprentissage machine
             (ML), j’étais loin de savoir comment faire. C’est en 2021 que j’ai
             recommencé à travailler sur cette idée en contribuant de manière
-            open-source à pyomyo et NeuroLeap, travaux initiés par @PerlinWarp.
+            open-source à <a href="https://github.com/PerlinWarp/pyomyo" target="_blank">pyomyo</a> et <a href="https://github.com/PerlinWarp/NeuroLeap" target="_blank">NeuroLeap</a>, travaux initiés par <a href="https://github.com/PerlinWarp" target="_blank">@PerlinWarp</a>.
             Nous sommes convaincu que c’est le futur de l’Interaction
             Homme-Machine (IHM) et l’objectif est de permettre à la communauté
-            d’être indépendante de Facebook Meta, qui a racheté CTRL.Labs,
-            possède les brevets de Myo (RIP), et qui devrait sortir d’ici peu un
-            bracelet EMG pour interagir en XR. Malheureusement, l’entreprise ne
+            d’être indépendante de <strike>Facebook</strike> Meta, qui a <a href="https://www.lemonde.fr/pixels/article/2019/09/24/facebook-achete-ctrl-labs-entreprise-specialisee-dans-l-interface-cerveau-machine_6012871_4408996.html" target="_blank">racheté CTRL.Labs</a>,
+            possède les <a href="https://patents.google.com/?q=armband&assignee=Facebook+Technologies%2c+Llc&oq=armband+assignee:(Facebook+Technologies%2c+Llc)" target="_blank">brevets de Myo</a>, et qui devrait sortir d’ici peu un
+            <a href="https://www.theverge.com/2021/3/18/22338008/facebook-reality-labs-emg-wristbands-ctrl-labs-ar-interface-demo" target="_blank">bracelet EMG pour interagir en XR</a>. Malheureusement, l’entreprise ne
             fait pas cela par compassion. Les signaux EMG sont une des
             meilleures manières d’identifier un individu (fingerprinting). Le
             modèle économique étant basé sur la publicité ciblée, on peut
-            rapidement imaginer les dérives du géant américain. Une partie du
+            rapidement imaginer les <a href="https://www.wsj.com/articles/the-facebook-files-11631713039" target="_blank">dérives du géant américain</a>. Une partie du
             groupe NeuroXR tente donc de développer du matériel DIY
             (Do-It-Yourself) car Myo n’est plus commercialisé et les
             alternatives restent peu nombreuses, tandis que l’autre partie
-            s’occupe de développer du logiciel pour permettre le décodage du
-            signal électrique de l'activité musculaire des doigts. Je ne suis pas
+            s’occupe de développer du logiciel pour permettre le décodage des
+            signaux électriques de l'activité musculaire des doigts. Je ne suis pas
             spécialiste de ML, mais j’ai commencé à m’y mettre avec Python et
             Tensorflow. De plus, malgré ses imperfections, le Leap Motion permet
-            de constituer rapidement une base de données pour le ML.
+            de constituer rapidement une base de données pour faire le lien entre 
+            signaux EMG et mouvements des doigts.
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
@@ -755,29 +756,29 @@
             #unity #leap-motion #quest #ar #passthrough #android
           </p>
           <p class="description ellipsis">
-            Pour contourner les limitations de l’API passthrough qui n’était
+            Pour contourner les limitations de l’<a href="https://developer.oculus.com/documentation/unity/unity-passthrough/" target="_blank">API passthrough</a> qui n’était
             alors pas encore disponible en 2019, j’ai commencé par connecter un
-            Leap Motion directement au Quest en tant que caméra UVC. Bien que
+            Leap Motion directement au Quest en tant que caméra <a href="https://en.wikipedia.org/wiki/USB_video_device_class" target="_blank">UVC</a>. Bien que
             difficilement accessible dans Unity grâce à un plugin qu’il a fallu
             étendre pour supporter le format un peu spécial YUYV interlacé mis à
-            disposition par Leap Motion, il m’a ensuite suffit de distordre et
+            disposition par Leap Motion, il m’a ensuite suffi de distordre et
             d’afficher l’image de chaque caméra à chaque oeil pour permettre le
-            passthrough. Cependant, plusieurs aspects restent insatisfaisants,
+            <em>passthrough</em>. Cependant, plusieurs aspects restent insatisfaisants,
             notamment à cause du problème d’alignement. Pour simplifier, la
             position du Leap Motion et l’écart entre les caméras sont différents
             de la position des yeux et l’écart des yeux, ce qui génère une
             adaptation légèrement gênante de notre vision. J’ai par la suite
-            fait l’acquisition d’une Zed Mini (caméra stéréoscopique couleur) et
+            fait l’acquisition d’une <a href="https://www.stereolabs.com/zed-mini/" target="_blank">Zed Mini</a> (caméra stéréoscopique couleur) et
             ai retenter l’expérimentation. Cependant, je n’ai pas entièrement
-            réussi à faire du passthrough avec car il y a un problème d’images
+            réussi à faire du <em>passthrough</em> avec car il y a un problème d’images
             par secondes (framerate). Toutes les ~5 secondes, l’image récupérée
-            de la caméra appliquée à une texture dans Unity freeze. Cela ne
+            de la caméra appliquée à une texture dans Unity <em>freeze</em>. Cela ne
             semble pas être en rapport à un problème de mémoire ni de
             ramasse-miettes (garbage collection), mais pourrait être lié à une
             librairie interne au plugin qui n’est pas mise à jour pour l’USB3.0.
             N’étant pas entièrement à l’aise avec le développement Android de
-            plugin AAR et l’API passthrough d’Oculus étant sortie, j’ai mis le
-            projet en pause. Maintenant que le casque Lynx a été annoncé,
+            <em>plugin AAR</em> et l’API passthrough d’<strike>Oculus</strike> Meta étant sortie, j’ai mis le
+            projet en pause. Maintenant que le casque <a href="https://www.lynx-r.com/" target="_blank">Lynx</a> a été annoncé,
             j'utilise la Zed Mini avec un PC, SteamVR, Unity et OpenCV pour
             expérimenter en réalité augmentée.
           </p>
@@ -804,7 +805,7 @@
             très plaisante est Google Keep. Cependant, j’aime l’idée de
             commencer à s’émanciper des GAFAM, et notamment Google et ses
             produits. Je voulais faire une application web dans laquelle les
-            données pouvaient être stockée à l’endroit ou l’utilisateur le
+            données pouvaient être stockée à l’endroit où l’utilisateur le
             souhaite, et dans mon cadre, à domicile. J’ai donc opté pour
             RemoteStorage, une librairie qui permet de synchroniser ses données
             avec un serveur que peut choisir l’utilisateur à travers un
@@ -828,7 +829,7 @@
             Afin d'aider un utilisateur du Leap Motion (LM) qui avaient exposé
             ses problèmes sur le forum de LM, j'ai apporté quelques
             modifications au Leap Motion Unity Core Plugin pour faciliter son
-            utilisation à distance. J'ai tout simplement ajouter une libraire C#
+            utilisation à distance. J'ai tout simplement ajouté une libraire C#
             de Websocket pour se connecter au serveur déjà déployé par LM qui
             sont normalement utilisés par Leap.js. Ensuite, il a fallu
             reconvertir les données json pour qu'elles correspondent aux
@@ -860,10 +861,10 @@
             connecté un Leap Motion directement au casque autonome. Comme le LM
             ne dispose pas de SDK compatible Android, il a fallu utiliser
             l’application VirtualHere qui permet d’utiliser des appareils USB
-            sur le réseau comme si ils étaient connectés en local. Installé sur
+            sur le réseau comme s'ils étaient connectés en local. Installé sur
             le casque (pour rappel sous Android) et un PC, connecté par Wifi
             (5GHz pour une latence minimale), le LM est fonctionnel sur le PC
-            comme si il était branché en local. Ensuite, il suffit de récupérer les
+            comme s'il était branché en local. Ensuite, il suffit de récupérer les
             données du LM via le serveur websocket déjà déployé sur le PC dans
             une expérience WebXR sur Quest en l’occurence basé sur Aframe.
           </p>
@@ -888,8 +889,8 @@
           </h1>
           <p class="tags">#codea #lua #aircode #expresslua</p>
           <p class="description ellipsis">
-            Codea dispose d'une fonctionnalités nommée AirCode qui permet d'éditer son code dans un navigateur web et de hot-reload 
-            le projet à chaque modifications. Comme à mon habitude, dès qu'un système ne me satisfait pas entièrement, je le reconstruit.
+            Codea dispose d'une fonctionnalité nommée AirCode qui permet d'éditer son code dans un navigateur web et de hot-reload 
+            le projet à chaque modification. Comme à mon habitude, dès qu'un système ne me satisfait pas entièrement, je le reconstruis.
             J'ai donc utilisé ma librairie de serveur web en lua, expressjs, ainsi que le monaco editor. J'implémente cette fois-ci 
             un véritable hot-reload qui permet de conserver l'état du projet malgré le rechargement d'une partie du code. Je me heurte cependant 
             à quelques problèmes, notamment le fait de devoir redévelopper des fonctions Codea qui sont par défaut liée au projet dans lequel elles 
@@ -964,7 +965,7 @@
             découverte de la <em>High Level API</em> réseau de Unity maintenant
             tombée en désuétude pour que sorte en 2021-2022
             <em>Netcode for GameObjects</em> (toujours en développement au
-            moment ou j'écris ces lignes...).
+            moment où j'écris ces lignes...).
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
@@ -987,7 +988,7 @@
           <p class="tags">#vr #ios #controller #3dof #daydream</p>
           <p class="description ellipsis">
             Avant d’avoir un Daydream View de Google, je voulais commencer à
-            développer des application de réalité virtuelle et n’ayant pas de
+            développer des applications de réalité virtuelle et n’ayant pas de
             deuxième téléphone sous Android pour utiliser le Controller Emulator
             proposé par Google, je l’ai redéveloppé sous Unity pour pouvoir
             l’utiliser sur un vieux Iphone 4. La difficulté majeure était de
@@ -1018,7 +1019,7 @@
             réalité virtuelle réalisée dans le cadre de la filière Jeux Vidéos,
             Interactions et Collaborations Numériques (JIN) en partenariat avec
             Telecom SudParis et l’ENSIIE. A l’époque, nous développons sur Unity
-            pour l’Oculus DK2 et Cardboard. Pour palier au problème du contrôle
+            pour l’Oculus DK2 et Cardboard. Pour pallier au problème du contrôle
             de l’application, nous utilisons un smartphone comme manette
             (télécommande) 3dof tactile. Ce n’est que quelques mois plus tard
             que nous verrons apparaître les manettes 3dof pour les casques
@@ -1105,7 +1106,7 @@
           <p class="description ellipsis">
             Ce projet permet de synchroniser des projets entre Codea et Dropbox. En particulier, 
             lorsque le projet est modifié, par exemple sur un pc avec le dossier synchroniser dropbox, 
-            SyncCodea le détecte, télécharge les modifications et relance le projet : un espèce de hot-reload.
+            SyncCodea le détecte, télécharge les modifications et relance le projet.
           </p>
           <button onclick="toggleEllipsis(this)">En savoir plus</button>
         </article>
