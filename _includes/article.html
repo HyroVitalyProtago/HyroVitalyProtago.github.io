@@ -27,9 +27,9 @@
   {% if post.title.fr and post.title.en and page.lang contains "fr" and page.lang contains "en" %}
     <h1 class="p-name" data-lang="fr">{{ post.title.fr }}</h1>
     <h1 class="p-name" data-lang="en">{{ post.title.en }}</h1>
-  {% elsif post.title.fr and page.lang contains "fr" %}
+  {% elsif post.title.fr and (page.lang contains "fr" or post.title.en == nil) %}
     <h1 class="p-name">{{ post.title.fr }}</h1>
-  {% elsif post.title.en and page.lang contains "en" %}
+  {% elsif post.title.en and (page.lang contains "en" or post.title.fr == nil) %}
     <h1 class="p-name">{{ post.title.en }}</h1>
   {% elsif post.title %}
     <h1 class="p-name">{{ post.title }}</h1>
