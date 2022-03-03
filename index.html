@@ -35,6 +35,7 @@
         --image-max-width: 300px;
         --image-margin: 3rem;
         --font-family: sans-serif;
+        scroll-behavior: smooth;
       }
 
       body {
@@ -44,8 +45,30 @@
       }
 
       header {
-        min-height: 64px;
+        /*min-height: 64px;*/
+        margin-bottom: 32px;
+        /*position: sticky;
+        top: 0;
+        background: white;*/
       }
+      header ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      header ul li {
+        padding: 12px;
+      }
+      :target:before {
+        content: "";
+        display: block;
+        height: 64px;
+        margin: -64px 0 0;
+      }
+
       footer {
         min-height: 64px;
         padding-top: 64px;
@@ -264,7 +287,16 @@
     </style>
   </head>
   <body>
-    <header></header>
+    <header>
+      <ul>
+        <!--<li><a href="#section-intro">Introduction</a></li>-->
+        <li><a href="#section-experiences">Expériences</a></li>
+        <li><a href="#section-formations">Formations</a></li>
+        <li><a href="#section-skills">Compétences</a></li>
+        <li><a href="#section-publications">Publications</a></li>
+        <li><a href="#section-projets">Projets</a></li>
+      </ul>
+    </header>
     <main>
       <h1>👋</h1>
       <h1 class="colored-gradient-text">Ludovic David</h1>
