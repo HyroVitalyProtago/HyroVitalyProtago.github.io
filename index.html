@@ -46,6 +46,7 @@
 
       header {
         /*min-height: 64px;*/
+        margin-top: 12px;
         margin-bottom: 32px;
         /*position: sticky;
         top: 0;
@@ -60,7 +61,7 @@
         justify-content: center;
       }
       header ul li {
-        padding: 12px;
+        padding: 4px 8px;
       }
       :target:before {
         content: "";
@@ -283,6 +284,21 @@
         color: inherit;
         text-decoration-color: blue;
         text-decoration-thickness: 4px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .logos {
+          float: none;
+        }
+        article {
+          text-align: center;
+        }
+        .medias {
+          height: 30vw;
+        }
+        .medias * {
+          height: 100%;
+        }
       }
     </style>
   </head>
